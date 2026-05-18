@@ -1,0 +1,4 @@
+export const API_KEY = "AAPTafHzU0L-sGJWCLV1miN_Pyg..3-Lyf29Xr9VLmk5bUeYD_5uvL4egSmBAX51Q-h_McFZueMczJb7QU21wgpBq5nHqF2NPuDGQl6A948bn1zdPBY9RFFPQ4rQor7T6QmoAjVq9mm_Qi_7VhzLdYS81EAG3ReiF4hBjHNJmgVGgS_Bxf59AoRoMiFuKR-iK8lABu3tzodcxhtRHkuv0bur0b3sZlv0fJ44S2Cf1JaoBjKcEHN8dRtafddiXnn_WsD6ZUcPvh5lPsnhLg2mpkZtKvJWB54S8wqsP-jeaah8bJMM.AT1_QuXjuTHK";
+
+export const ROUTES_URL = "https://services8.arcgis.com/3mAcHeehVYMQNpVe/arcgis/rest/services/metro_lines/FeatureServer";
+export const STOPS_URL = "https://services8.arcgis.com/3mAcHeehVYMQNpVe/arcgis/rest/services/metro_stations/FeatureServer";
