@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:;base64,=" />
+    <title>Cairo Transit Explorer</title>
+
+    <!-- ArcGIS Map Components -->
+    <script type="module" src="https://js.arcgis.com/5.0/"></script>
+
+    <!-- ArcGIS Theme -->
+    <link rel="stylesheet" href="https://js.arcgis.com/5.0.0/esri/themes/light/main.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- The Shell component is used as a layout for this template -->
+    <calcite-shell content-behind>
+        <calcite-navigation slot="header" >            
+            <!-- Heading and description dynamically populated below using JavaScript -->
+            <calcite-navigation-logo heading-level="1" slot="logo" heading="Cairo Transit Explorer" description="Move Smarter"></calcite-navigation-logo>
+        </calcite-navigation>
+        <calcite-action-bar layout="horizontal" expand-disabled floating overflow-actions-disabled>
+            <calcite-button id="streetsBtn" width="full">Streets</calcite-button>
+
+            <calcite-button id="satelliteBtn" width="full">Satellite</calcite-button>
+
+            <calcite-button id="topoBtn" width="full">Topographic</calcite-button>
+
+            <calcite-button id="cairoBtn" width="full">Go to Cairo</calcite-button>
+
+            <calcite-button id="alexBtn" width="full">Go to Alexandria</calcite-button>
+
+            <calcite-button id="extentBtn" width="full">Set Egypt Extent</calcite-button>
+
+            <calcite-button id="scaleBtn" width="full">Scale 1:50000</calcite-button>
+
+            <calcite-button id="rotateBtn" width="full">Rotate 45°</calcite-button>
+        </calcite-action-bar>
+
+        
+        <arcgis-map id="viewDiv" basemap="streets-navigation-vector" center="31.2357,30.0444" and zoom="11">
+            <arcgis-zoom slot="top-start"></arcgis-zoom>            
+            <arcgis-basemap-toggle id="basemap-toggle"></arcgis-basemap-toggle>
+        </arcgis-map>
+    </calcite-shell>
+
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
