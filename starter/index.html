@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:;base64,=" />
+    <title>Cairo Transit Explorer</title>
+
+    <!-- ArcGIS Map Components -->
+    <script type="module" src="https://js.arcgis.com/5.0/"></script>
+
+    <!-- ArcGIS Theme -->
+    <link rel="stylesheet" href="https://js.arcgis.com/5.0.0/esri/themes/light/main.css" />
+
+    <!-- Calcite -->
+    <script type="module" src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/3.0.3/calcite.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- The Shell component is used as a layout for this template -->
+    <calcite-shell content-behind>
+        <calcite-navigation slot="header">
+            <!-- Heading and description dynamically populated below using JavaScript -->
+            <calcite-navigation-logo heading-level="1" slot="logo" heading="Cairo Transit Explorer"
+                description="Move Smarter"></calcite-navigation-logo>
+        </calcite-navigation>
+        
+        <!-- Sidebar -->
+        <calcite-shell-panel slot="panel-start" width-scale="m">
+            <calcite-panel heading="Report Transit Issue">
+
+                <div class="sidebar-content">
+
+                    <!-- Incident Type -->
+                    <calcite-label>
+                        Issue Type
+                        <calcite-select id="incidentType">
+                            <calcite-option value="Delay">Delay</calcite-option>
+                            <calcite-option value="Crowding">Crowding</calcite-option>
+                            <calcite-option value="Maintenance">Maintenance</calcite-option>
+                        </calcite-select>
+                    </calcite-label>
+
+                    <!-- Description -->
+                    <calcite-label>
+                        Description
+                        <calcite-input id="incidentDescription" placeholder="Describe the issue">
+                        </calcite-input>
+                    </calcite-label>
+
+                    <!-- Report Button -->
+                    <calcite-button id="startReportingBtn" width="full">
+                        Start Reporting Mode
+                    </calcite-button>
+
+                    <!-- Output -->
+                    <calcite-notice open>
+                        <div slot="message" id="output">
+                            Select issue type and start reporting.
+                        </div>
+                    </calcite-notice>
+
+                </div>
+
+            </calcite-panel>
+        </calcite-shell-panel>
+
+        <arcgis-map id="viewDiv" basemap="streets-navigation-vector" center="31.2357,30.0444" and zoom="11">
+            <arcgis-zoom slot="top-start"></arcgis-zoom>
+            <!--TODO005 Add Editor Component-->
+            <arcgis-editor slot="top-right" hide-edit-features-section></arcgis-editor>
+
+
+            <arcgis-basemap-toggle id="basemap-toggle" slot="bottom-start"></arcgis-basemap-toggle>
+
+            <calcite-notice open icon="layers-reference" slot="bottom-end">
+                <div slot="title">Visible Stations:</div>
+                <div slot="message" id="stationsCount">Start navigating the map to see count of visible Stations
+                </div>
+            </calcite-notice>
+
+            <calcite-notice open slot="top-end">
+                <div slot="message" id="output">
+                    Click a stop, route, or map location.
+                </div>
+            </calcite-notice>
+
+        </arcgis-map>
+
+        
+    </calcite-shell>
+    
+    <script type="module" src="./main.js"></script>
+
+</body>
+
+</html>
