@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:;base64,=" />
+    <title>Cairo Transit Explorer</title>
+
+    <!-- ArcGIS Map Components -->
+    <script type="module" src="https://js.arcgis.com/5.0/"></script>
+
+    <!-- ArcGIS Theme -->
+    <link rel="stylesheet" href="https://js.arcgis.com/5.0.0/esri/themes/light/main.css" />
+
+    <!-- Calcite -->
+    <script type="module" src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/3.0.3/calcite.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- The Shell component is used as a layout for this template -->
+    <calcite-shell content-behind>
+        <calcite-navigation slot="header">
+            <!-- Heading and description dynamically populated below using JavaScript -->
+            <calcite-navigation-logo heading-level="1" slot="logo" heading="Cairo Transit Explorer"
+                description="Move Smarter"></calcite-navigation-logo>
+        </calcite-navigation>
+        <calcite-panel>
+            <calcite-action-bar layout="horizontal" expand-disabled floating overflow-actions-disabled>
+
+                <calcite-label>
+                    Filter Station by Route
+                    <calcite-select id="routeNumberFilter">
+                        <calcite-option value="All">All</calcite-option>
+                        <calcite-option value="1">الخط لأول</calcite-option>
+                        <calcite-option value="2">الخط الثاني</calcite-option>
+                        <calcite-option value="3">الخط الثالث</calcite-option>
+                    </calcite-select>
+                </calcite-label>
+
+
+            </calcite-action-bar>
+
+            <arcgis-map id="viewDiv" basemap="streets-navigation-vector" center="31.2357,30.0444" and zoom="11">
+                <arcgis-zoom slot="top-start"></arcgis-zoom>
+                <arcgis-basemap-toggle id="basemap-toggle" slot="bottom-start"></arcgis-basemap-toggle>
+
+                <calcite-notice open icon="layers-reference" slot="bottom-end">
+                    <div slot="title">Visible Stations:</div>
+                    <div slot="message" id="stationsCount">Start navigating the map to see count of visible Stations
+                    </div>
+                </calcite-notice>
+
+                <calcite-notice open slot="top-end">
+                    <div slot="message" id="output">
+                        Click a stop, route, or map location.
+                    </div>
+                </calcite-notice>
+
+            </arcgis-map>
+        </calcite-panel>
+
+        <script type="module" src="./main.js"></script>
+
+    </calcite-shell>
+</body>
+
+</html>
