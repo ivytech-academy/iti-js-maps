@@ -19,24 +19,21 @@
 <body>
     <!-- The Shell component is used as a layout for this template -->
     <calcite-shell content-behind>
-        <calcite-navigation slot="header" >            
+        <calcite-navigation slot="header">
             <!-- Heading and description dynamically populated below using JavaScript -->
-            <calcite-navigation-logo heading-level="1" slot="logo" heading="Cairo Transit Explorer" description="Move Smarter"></calcite-navigation-logo>
+            <calcite-navigation-logo heading-level="1" slot="logo" heading="Cairo Transit Explorer"
+                description="Move Smarter"></calcite-navigation-logo>
         </calcite-navigation>
         
+        <calcite-action-bar layout="horizontal" expand-disabled floating overflow-actions-disabled>
+            <calcite-button id="applyColorRendererBtn" width="full">Apply UV Renderer</calcite-button>
 
-        <!-- Sidebar -->
-        <calcite-shell-panel slot="panel-start" width-scale="m">
-            <calcite-panel heading="Side-Panel Title">
-                <div class="sidebar-content">                    
+            <calcite-button id="applyScaleDepSizeBtn" width="full">Apply Scale Dependent Size</calcite-button>            
+        </calcite-action-bar>
 
-                </div>
-            </calcite-panel>
-        </calcite-shell-panel>
 
-        
         <arcgis-map id="viewDiv" basemap="streets-navigation-vector" center="31.2357,30.0444" and zoom="11">
-            <arcgis-zoom slot="top-start"></arcgis-zoom>            
+            <arcgis-zoom slot="top-start"></arcgis-zoom>
             <arcgis-basemap-toggle id="basemap-toggle"></arcgis-basemap-toggle>
         </arcgis-map>
     </calcite-shell>

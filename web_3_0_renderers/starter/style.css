@@ -1,7 +1,7 @@
 
 /* Brand Variables */
 :root {
-  --brand-primary: #8f1515;
+  --brand-primary: #60b171;
   --brand-secondary: #D62828;
   --brand-accent: #2A9D8F;
   --brand-bg: #F8F9FA;
@@ -11,8 +11,8 @@
 
   /* Calcite Overrides */
   --calcite-color-brand: var(--brand-primary);
-  --calcite-color-brand-hover: #00497A;
-  --calcite-color-brand-press: #003B63;
+  --calcite-color-brand-hover: #3c7949;
+  --calcite-color-brand-press: #3c7949;
 
   --calcite-color-text-1: var(--brand-text);
   --calcite-color-background: var(--brand-bg);
@@ -28,6 +28,13 @@ arcgis-map {
   padding: 0;
   width: 100%;
   height: 100%;
+}
+
+arcgis-map {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 94%;
 }
 
 /* Typography */
@@ -55,8 +62,8 @@ body {
 /* Buttons */
 calcite-button {
   --calcite-color-brand: var(--brand-primary);
-  --calcite-color-brand-hover: #00497A;
-  --calcite-color-brand-press: #003B63;
+  --calcite-color-brand-hover: #3c7949;
+  --calcite-color-brand-press: #3c7949;
   border-radius: 8px;
 }
 
@@ -85,3 +92,10 @@ arcgis-map {
     bottom: 2rem;
     left: 2rem;
   }
+
+  .sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+}
